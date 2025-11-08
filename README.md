@@ -42,4 +42,4 @@ git submodule update --init
 ```
 
 ## 开源许可
-本项目基于 [BSD-3-Clause] 许可开源
+本项目基于 [BSD-2-Clause] 许可开源
