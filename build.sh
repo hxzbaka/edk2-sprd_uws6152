@@ -21,19 +21,13 @@ fi
 echo "Building for device: $DEVICE"
 echo "Using DSC file: $DSC_FILE"
 
-chmod -R 777 ./*
-
+# Build
 set -e
 ./build_common.sh
-
 # not actually GCC5; it's GCC7 on Ubuntu 18.04.
 ./build_bootshim.sh
-
 GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -j$(nproc) -s -n 0 -a AARCH64 -t GCC5 -p "$DSC_FILE"
-
-
-cat BootShim/BootShim.bin "workspace/Build/UWS6152Pkg/DEBUG_GCC5/FV/UWS6152PKG_UEFI.fd" > "workspace/UEFI_${DEVICE}"
-
+cat BootShim/BootShim.bin workspace/Build/UWS6152Pkg/DEBUG_GCC5/FV/UWS6152PKG_UEFI.fd > "workspace/UEFI_${DEVICE}"
 echo "Build completed!"
 echo "Output: $PWD/workspace/UEFI_${DEVICE}"
 echo ""
