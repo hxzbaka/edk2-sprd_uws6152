@@ -1,3 +1,5 @@
+### 此项目已废弃，请转到[UNISOC-WOA-DEV](https://github.com/UNISOC-WOA-DEV)
+
 # EDK2-SPRD_UWS6152
 
 为 Unisoc (SPRD) W527 芯片适配的 EDK2 固件项目。
